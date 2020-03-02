@@ -6,12 +6,25 @@ Data was collected over the period of 50 days before and 50 days after large ear
 
 ## Data sources
 
-Data about the state of the ionosphere was obtained from the website of the [United States National Centers for Environmental Information](https://www.ngdc.noaa.gov/stp/iono/ionogram.html) (NCEI). 
+Data about the state of the ionosphere were obtained from the website of the [United States National Centers for Environmental Information](https://www.ngdc.noaa.gov/stp/iono/ionogram.html) (NCEI). 
 
 The earthquakes information was obtained from the website of [United States Geological Survey](https://www.usgs.gov/natural-hazards/earthquake-hazards/earthquakes) (USGS).
 
 ## Data description
 All data are stored in the ```.csv``` format with ```\t``` as column separator. 
+
+### Earthquakes data
+
+Folder ```USGS_dataset/``` contains the full list of earthquakes, during the period of which the data about the state of the ionosphere were obtained.
+
+Earthquakes characteristics are described in the ```earthquakes_description``` table. There are also two supporting tables, ```sondes_in_eq_prep_zone``` and ```sondes_pairs```, that link and earthquake (_earthquake_id_) and ionosondes in the preparation zone of the earthquake (_sonde_). 
+
+The last two tables contain attributes such as:
+- (```eq_lat```, ```eq_lon```) and (```sonde_lat```, ```sonde_lon```) - coordinates of an earthquake epicenter and ionosonde respectively;
+- ```prep_zone``` - earthquake preparation zone radius (km);
+- ```eq_sonde_dist``` - distance from earthquake epicenter to ionosonde (km).
+
+Ionosonde data in the ```sondes_pairs``` table are marked with indexes 1 and 2 for an ionosonde in the earthquake preparation zone (1) and an ionosonde outsize that zone, but close to the first one (2). 
 
 ### Ionosonde data
 Ionosondes readings can be found in ```/NCEI_dataset/``` folder.
